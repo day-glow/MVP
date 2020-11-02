@@ -1,5 +1,9 @@
 ### node etc ###
 
+#api keys
+config/
+youtube_api_key.js
+
 # Logs
 logs
 *.log
