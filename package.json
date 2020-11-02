@@ -1,0 +1,39 @@
+{
+  "name": "MVP",
+  "version": "1.0.0",
+  "description": "Motivation App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -d --watch",
+    "start": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/day-glow/MVP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/day-glow/MVP/issues"
+  },
+  "homepage": "https://github.com/day-glow/MVP#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-react": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "nodemon": "^2.0.6",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
