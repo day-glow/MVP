@@ -10,6 +10,7 @@ import exampleQuoteData from '/Users/jacki/Downloads/git_tutorial/work/MVP/datab
 import exampleSongData from '/Users/jacki/Downloads/git_tutorial/work/MVP/database/exampleSongData.js';
 import exampleVideoData from '/Users/jacki/Downloads/git_tutorial/work/MVP/database/exampleVideoData.js';
 import exampleTweetData from '/Users/jacki/Downloads/git_tutorial/work/MVP/database/exampleTweetData.js';
+import Header from './Header.jsx';
 import QuoteContainer from './QuoteContainer.jsx';
 import SongPlayerContainer from './SongPlayerContainer.jsx';
 import VideoPlayerContainer from './VideoPlayerContainer.jsx';
@@ -65,13 +66,24 @@ function App() {
 
   return (
     <div>
-      <div>Nav Bar goes here</div>
-        <h1>Hey beautiful, How are you feeling today?</h1>
-        <h2>86,400 seconds in a day</h2>
-      <div>
-        <button type='button' id='start-btn'>Motivate Me</button>
+      <div className='header'>
+        Nav Bar goes here
+        <Header />
       </div>
-      <div>
+
+      <br />
+
+      <div className='intro'>
+        <div className='title'>
+          <h1>Hey beautiful, How are you feeling today?</h1>
+          <h2>86,400 seconds in a day</h2>
+        </div>
+        <div>
+          <button type='button' id='start-btn'>Motivate Me</button>
+        </div>
+      </div>
+
+      <div className='categories'>
         <div className='container category-quote'>
           Box1: Quote
           <QuoteContainer
@@ -101,10 +113,10 @@ function App() {
           />
         </div>
       </div>
-      <div>
-        {data}
+
+      <div className='footer'>
+        Share Options
       </div>
-      <div className='footer'>Share Options</div>
     </div>
   )
 }
