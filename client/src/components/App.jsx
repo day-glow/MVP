@@ -9,65 +9,81 @@ import sampleData from '/Users/jacki/Downloads/git_tutorial/work/MVP/database/sa
 import exampleQuoteData from '/Users/jacki/Downloads/git_tutorial/work/MVP/database/exampleQuoteData.js';
 import exampleSongData from '/Users/jacki/Downloads/git_tutorial/work/MVP/database/exampleSongData.js';
 import exampleVideoData from '/Users/jacki/Downloads/git_tutorial/work/MVP/database/exampleVideoData.js';
+import exampleTweetData from '/Users/jacki/Downloads/git_tutorial/work/MVP/database/exampleTweetData.js';
+import Header from './Header.jsx';
 import QuoteContainer from './QuoteContainer.jsx';
 import SongPlayerContainer from './SongPlayerContainer.jsx';
 import VideoPlayerContainer from './VideoPlayerContainer.jsx';
-
+import TweetContainer from './TweetContainer.jsx';
 
 function App() {
 
   const [nextQuote, setNextQuote] = useState(exampleQuoteData.quotes[0]);
   const [nextSong, setNextSong] = useState(exampleSongData.items[0].track);
   const [nextVideo, setNextVideo] = useState(exampleVideoData[1]);
+  const [nextTweet, setNextTweet] = useState(exampleTweetData);
 
   const data = sampleData[1]['title'] || 'data not imported correctly';
 
   const getNextQuote = () => {
     console.log('HERE in App level to make Axios req')
-    //axios GET req for youtube video
     axios.get('/api/quotes')
-      //set next video
       .then((result) => {
-        console.log('client App GET quote result for QUOTE: ', result.data);
+        //console.log('client App GET quote result for QUOTE: ', result.data);
         setNextQuote(result.data.quotes[0]);
       })
       .catch((err) => console.log(err))
-      //pass video info to VideoPlayer Container
   }
 
   const getNextSong = () => {
-    //axios GET req for youtube video
     axios.get('/song')
-      //set next video
       .then((result) => {
         console.log('client App GET song result for SONG: ', result.data.items[1].track);
         setNextSong(result.data.items[1].track);
       })
       .catch((err) => console.log(err))
-      //pass video info to VideoPlayer Container
   }
 
   const getNextVideo = () => {
     //axios GET req for youtube video
     axios.get('/video')
-      //set next video
       .then((result) => {
-        console.log('client App GET video result for VIDEO: ', result.data.items[0]);
+        //console.log('client App GET video result for VIDEO: ', result.data.items[0]);
         setNextVideo(result.data.items[0]);
       })
       .catch((err) => console.log(err))
-      //pass video info to VideoPlayer Container
+  }
+
+  const getNextTweet = () => {
+    console.log('HERE in App level to make Axios req for TWEETS')
+    axios.get('/api/tweets')
+      .then((result) => {
+        console.log('client App GET tweet result for TWEET: ', result.data.data[0]);
+        setNextTweet(result.data.data[0]);
+      })
+      .catch((err) => console.log(err))
   }
 
   return (
     <div>
-      <div>Nav Bar goes here</div>
-        <h1>Hey beautiful, How are you feeling today?</h1>
-        <h2>86,400 seconds in a day</h2>
-      <div>
-        <button type='button' id='start-btn'>Motivate Me</button>
+      <div className='header'>
+        Nav Bar goes here
+        <Header />
       </div>
-      <div>
+
+      <br />
+
+      <div className='intro'>
+        <div className='title'>
+          <h1>Hey beautiful, How are you feeling today?</h1>
+          <h2>86,400 seconds in a day</h2>
+        </div>
+        <div>
+          <button type='button' id='start-btn'>Motivate Me</button>
+        </div>
+      </div>
+
+      <div className='categories'>
         <div className='container category-quote'>
           Box1: Quote
           <QuoteContainer
@@ -89,12 +105,18 @@ function App() {
             getNextVideo={getNextVideo}
           />
         </div>
-        <div className='container category-social'>Box4: SocialMedia</div>
+        <div className='container category-social'>
+          Box4: SocialMedia
+          <TweetContainer
+            nextTweet={nextTweet}
+            getNextTweet={getNextTweet}
+          />
+        </div>
       </div>
-      <div>
-        {data}
+
+      <div className='footer'>
+        Share Options
       </div>
-      <div className='footer'>Share Options</div>
     </div>
   )
 }
