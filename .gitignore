@@ -3,6 +3,7 @@
 #api keys
 config/
 youtube_api_key.js
+spotify_api_key.js
 
 # Logs
 logs

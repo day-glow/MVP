@@ -1,4 +1,4 @@
-var exampleVideoData = [{
+const exampleVideoData = [{
   kind: 'youtube#searchResult',
   etag: 'm_tE1Af3rU57R0v6uWKUu4XCh9E',
   id: {

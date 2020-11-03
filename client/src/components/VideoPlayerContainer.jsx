@@ -1,19 +1,5 @@
 import React, { useState } from 'react';
 
-// var VideoPlayer = ({video}) => (
-//   !video
-//     ? <div className="video-player">Please wait...</div>
-    // : <div className="video-player">
-    //   <div className="embed-responsive embed-responsive-16by9">
-    //     <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${video.id.videoId}`} allowFullScreen></iframe>
-    //   </div>
-    //   <div className="video-player-details">
-    //     <h3>{video.snippet.title}</h3>
-    //     <div>{video.snippet.description}</div>
-    //   </div>
-    // </div>
-// );
-
 function VideoPlayer({ nextVideo, getNextVideo }) {
 
   // const [video, setVideo] = useState('');
@@ -28,7 +14,7 @@ function VideoPlayer({ nextVideo, getNextVideo }) {
 
       <div className="video-player">
         <div className="embed-responsive">
-          <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${nextVideo.id.videoId}`} allowFullScreen></iframe>
+          <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${nextVideo.id.videoId}`} frameBorder="0" allowFullScreen></iframe>
         </div>
         <div className="video-player-details">
           <h3>{nextVideo.snippet.title}</h3>
@@ -36,7 +22,7 @@ function VideoPlayer({ nextVideo, getNextVideo }) {
         </div>
       </div>
       <div>
-        <button type='button' id='next-btn' onClick={() => getNextVideo()}>NEXT VIDEO</button>
+        <button type='button' className='next-btn' id='video-btn' onClick={() => getNextVideo()}>NEXT VIDEO</button>
       </div>
 
     </div>
