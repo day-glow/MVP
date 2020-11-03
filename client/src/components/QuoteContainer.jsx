@@ -1,5 +1,3 @@
-//https://www.mediawiki.org/wiki/Special:MyLanguage/API:Main_page
-
 import React, { useState } from 'react';
 
 function QuoteContainer({ nextQuote, getNextQuote}) {
