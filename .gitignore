@@ -2,8 +2,10 @@
 
 #api keys
 config/
-youtube_api_key.js
+favQs_api_key.js
 spotify_api_key.js
+youtube_api_key.js
+twitter_api_key.js
 
 # Logs
 logs
