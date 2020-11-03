@@ -38,7 +38,7 @@ function App() {
   const getNextSong = () => {
     axios.get('/song')
       .then((result) => {
-        //console.log('client App GET song result for SONG: ', result.data.items[1].track);
+        console.log('client App GET song result for SONG: ', result.data.items[1].track);
         setNextSong(result.data.items[1].track);
       })
       .catch((err) => console.log(err))
@@ -58,8 +58,8 @@ function App() {
     console.log('HERE in App level to make Axios req for TWEETS')
     axios.get('/api/tweets')
       .then((result) => {
-        console.log('client App GET tweet result for TWEET: ', result.data);
-        //setNextTweet(result.data);
+        console.log('client App GET tweet result for TWEET: ', result.data.data[0]);
+        setNextTweet(result.data.data[0]);
       })
       .catch((err) => console.log(err))
   }

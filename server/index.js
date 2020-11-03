@@ -6,6 +6,7 @@ var SpotifyWebApi = require('spotify-web-api-node');
 const { FAVQS_API_KEY } = require('../client/src/config/favQs_api_key.js');
 const { SPOTIFY_CLIENT_ID, SPOTIFY_SECRET_KEY, SPOTIFY_OAUTH_TOKEN } = require('../client/src/config/spotify_api_key.js');
 const { YOUTUBE_API_KEY } = require('../client/src/config/youtube_api_key.js');
+const { TWITTER_API_KEY, TWITTER_SECRET_KEY, TWITTER_BEARER_TOKEN } = require('../client/src/config/twitter_api_key.js');
 
 const app = express();
 const PORT = 3000;
@@ -34,7 +35,7 @@ app.get('/api/quotes', (req, res) => {
 //GET Spotify Song
 app.get('/song', (req, res) => {
   console.log('in Server req')
-  axios.get('https://api.spotify.com/v1/playlists/4LJ5hkgqt04IKw454SUJqV/tracks?market=US&limit=20', {
+  axios.get('https://api.spotify.com/v1/playlists/4LJ5hkgqt04IKw454SUJqV/tracks?market=US&limit=10', {
     headers: {
       "Accept": "application/json",
       "Content-Type": "application/json",
@@ -71,6 +72,21 @@ app.get('/video', (req, res) => {
 //   type: 'video',
 //   videoEmbeddable: 'true'
 // })
+
+app.get('/api/tweets', (req, res) => {
+  axios.get('https://api.twitter.com/2/tweets/search/recent?query=motivation&expansions=author_id,attachments.media_keys', {
+    headers: {
+      "Authorization": `Bearer ${TWITTER_BEARER_TOKEN}`
+    }
+  })
+    .then((result) => {
+      console.log(result);
+      res.status(200).send(result.data);
+    })
+    .catch((err) => console.log(err));
+})
+
+//"https://api.twitter.com/2/tweets/440322224407314432?expansions=author_id,attachments.media_keys"
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);

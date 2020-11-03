@@ -20,8 +20,8 @@ function TweetContainer({ nextTweet, getNextTweet}) {
           <a className="twitter-timeline" href="https://twitter.com/TwitterDev/timelines/539487832448843776?ref_src=twsrc%5Etfw">National Park Tweets - Curated tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
         </div>
         <div className="tweet-details">
-          <div>{nextTweet.data.text}</div>
-          <h3>By: {nextTweet.includes.users[0].username}</h3>
+          <div>{nextTweet.text}</div>
+          {/* <h3>By: {nextTweet.includes.users[0].username || ''}</h3> */}
         </div>
       </div>
       <div>
