@@ -11,10 +11,6 @@ function VideoPlayer({ nextVideo, getNextVideo }) {
     <div>
       <div className="container-video-player">
         <div className="video-player">
-          {/* <div className="embed-responsive">
-            <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${nextVideo.id.videoId}`} frameBorder="0" allowFullScreen></iframe>
-          </div> */}
-
           <div className="card">
             <div className="card-image waves-effect waves-block waves-light">
               <div className="video-container">
@@ -33,7 +29,8 @@ function VideoPlayer({ nextVideo, getNextVideo }) {
 
         </div>
         <div>
-          <button type='button' className='btn-floating btn-large waves-effect waves-light next-btn align-right' id='video-btn' onClick={() => getNextVideo()}>>></button>
+          <button type='button' className='btn-floating btn-large waves-effect waves-light next-btn' id='video-btn' onClick={() => getNextVideo()}><i class="material-icons">arrow_forward</i></button>
+          <button type='button' className='btn-floating btn-large waves-effect waves-light next-btn align-right like' id='like-btn' onClick={() => 'addLike()'}><i class="material-icons">favorite_border</i></button>
         </div>
       </div>
     </div>

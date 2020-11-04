@@ -86,7 +86,7 @@ app.get('/song', (req, res) => {
 
 //GET Youtube Video
 app.get('/video', (req, res) => {
-  axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&type=video&part=snippet&maxResults=1&q=motivation`)
+  axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&type=video&part=snippet&maxResults=10&q=motivation`)
   .then((result) => {
     //console.log(result.data);
     res.status(200).send(result.data);

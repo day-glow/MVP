@@ -30,11 +30,12 @@ App Header
   display: block;
   float: right;
   width: 200px;
-
+  margin-right: 10px;
 }
 
 .logged-in-user {
   width: 250px !important;
+  margin-right: 10px;
 }
 /* .header {
   display: block;
@@ -141,17 +142,34 @@ Category Containers
 }
 
 .container-song-player {
-  margin: 50px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  margin: 20px auto;
+
 }
 
 .next-song-btn {
-  float: left;
-  margin-top: 300px;
-  margin-left: 150px;
+  margin: 20px auto;
+  margin-left: 120px;
+  margin-right: 120px;
 }
 
 .song-player {
-  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+}
+
+.twitter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  margin: 50px auto;
 }
 
 /*
@@ -193,6 +211,10 @@ Buttons
   outline: none;
 }
 
+/* #like-btn {
+  margin: 10px;
+} */
+
 /*
 ===============================
 Footer
@@ -203,7 +225,7 @@ Footer
   margin-left: 10px;
 }
 
-.footer-copyright {
+.sign-copyright {
   margin-left: 20px;
 }
 

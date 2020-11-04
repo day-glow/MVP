@@ -17,15 +17,17 @@ function Footer() {
                 <div>
                   <a href="https://twitter.com/intent/tweet?button_hashtag=Motivation&ref_src=twsrc%5Etfw" className="twitter-hashtag-button" data-show-count="false">Tweet #Motivation</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                 </div>
-              <li><a className="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a className="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a className="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              <li>
+                <div className="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+              </li>
+
+              {/* <li><a className="grey-text text-lighten-3" href="#!">Link 4</a></li> */}
             </ul>
           </div>
         </div>
       </div>
       <div className="footer-copyright">
-        <div>
+        <div className="sign-copyright">
           © 2014 Copyright Text
         </div>
       </div>

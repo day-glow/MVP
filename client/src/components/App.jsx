@@ -24,6 +24,10 @@ function App() {
   const [nextVideo, setNextVideo] = useState(exampleVideoData[0]);
   const [nextTweet, setNextTweet] = useState(exampleTweetData);
   const [currentUser, setCurrUser] = useState('');
+  const [quoteCount, setQuoteCount] = useState(0);
+  const [songCount, setSongCount] = useState(0);
+  const [videoCount, setVideoCount] = useState(0);
+  const [tweetCount, setTweetCount] = useState(0);
 
   const addNewUser = (data) => {
     //console.log('made it to app level, registerNewUser', data);
@@ -39,7 +43,8 @@ function App() {
     axios.get('/api/quotes')
       .then((result) => {
         //console.log('client App GET quote result for QUOTE: ', result.data);
-        setNextQuote(result.data.quotes[0]);
+        setNextQuote(result.data.quotes[quoteCount]);
+        setQuoteCount(quoteCount + 1);
       })
       .catch((err) => console.log(err))
   }
@@ -48,7 +53,8 @@ function App() {
     axios.get('/song')
       .then((result) => {
         //console.log('client App GET song result for SONG: ', result.data.items[1].track);
-        setNextSong(result.data.items[1].track);
+        setNextSong(result.data.items[songCount].track);
+        setSongCount(songCount + 1);
       })
       .catch((err) => console.log(err))
   }
@@ -57,13 +63,15 @@ function App() {
     //axios GET req for youtube video
     axios.get('/video')
       .then((result) => {
-        console.log('client App GET video result for VIDEO: ', result.data.items[0]);
-        setNextVideo(result.data.items[0]);
+        //console.log('client App GET video result for VIDEO: ', result.data.items);
+        setNextVideo(result.data.items[videoCount]);
+        setVideoCount(videoCount + 1);
       })
       .catch((err) => console.log(err))
   }
 
   const getNextTweet = () => {
+    setTweetCount(tweetCount + 1);
     //console.log('HERE in App level to make Axios req for TWEETS')
     axios.get('/api/tweets')
       .then((result) => {
@@ -88,8 +96,8 @@ function App() {
 
       <div className='container intro'>
         <div className='title'>
+          <h1></h1>
           <h2>HEY BEAUTIFUL!</h2>
-          <h1>How are you feeling today?</h1>
           <h1>Need some<br/>MOTIVATION<br/>to get you pumped up?!</h1>
         </div>
         <div>
@@ -120,6 +128,7 @@ function App() {
           <TweetContainer
             nextTweet={nextTweet}
             getNextTweet={getNextTweet}
+            count={tweetCount}
           />
         </div>
       </div>

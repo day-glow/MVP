@@ -23,7 +23,8 @@ function QuoteContainer({ nextQuote, getNextQuote}) {
                   </span>
                 </div>
                 <div>
-                  <button type='button' className='btn-floating btn-large waves-effect waves-light next-btn align-center' id='quote-btn' onClick={() => getNextQuote()}>>></button>
+                  <button type='button' className='btn-floating btn-large waves-effect waves-light next-btn align-center' id='quote-btn' onClick={() => getNextQuote()}><i class="material-icons">arrow_forward</i></button>
+                  <button type='button' className='btn-floating btn-large waves-effect waves-light next-btn align-right like' id='like-btn' onClick={() => 'addLike()'}><i class="material-icons">favorite_border</i></button>
                 </div>
               </div>
             </div>
