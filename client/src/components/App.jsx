@@ -11,7 +11,7 @@ import exampleSongData from '/Users/jacki/Downloads/git_tutorial/work/MVP/databa
 import exampleVideoData from '/Users/jacki/Downloads/git_tutorial/work/MVP/database/exampleVideoData.js';
 import exampleTweetData from '/Users/jacki/Downloads/git_tutorial/work/MVP/database/exampleTweetData.js';
 import Header from './Header.jsx';
-
+import NewUser from './NewUser.jsx';
 import QuoteContainer from './QuoteContainer.jsx';
 import SongPlayerContainer from './SongPlayerContainer.jsx';
 import VideoPlayerContainer from './VideoPlayerContainer.jsx';
@@ -24,11 +24,12 @@ function App() {
   const [nextVideo, setNextVideo] = useState(exampleVideoData[1]);
   const [nextTweet, setNextTweet] = useState(exampleTweetData);
 
-  const [firstName, setFirst] = useState('');
-  const [lastName, setLast] = useState('');
-  const [userName, setUserName] = useState('');
-
-  const data = sampleData[1]['title'] || 'data not imported correctly';
+  const addNewUser = (data) => {
+    //console.log('made it to app level, registerNewUser', data);
+    axios.post('/api/user', data)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
+  }
 
   const getNextQuote = () => {
     console.log('HERE in App level to make Axios req')
@@ -75,8 +76,15 @@ function App() {
         Nav Bar goes here
         <Header />
       </div>
-
       <br />
+      <div className='container-new-user'>
+        <NewUser
+          addNewUser={addNewUser}
+          // firstName={firstName}
+          // lastName={lastName}
+          // userName={userName}
+        />
+      </div>
 
       <div className='intro'>
         <div className='title'>

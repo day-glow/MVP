@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 const axios = require('axios');
 const db = require('../database/model.js')
@@ -13,9 +14,14 @@ const app = express();
 const PORT = 3000;
 const PUBLIC_DIR = path.resolve(__dirname, '../public');
 
-
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static(PUBLIC_DIR));
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  next();
+});
 //app.use('/user')
 
 //create new user
@@ -103,6 +109,10 @@ app.get('/api/tweets', (req, res) => {
     })
     .catch((err) => console.log(err));
 })
+
+// app.post('/api/user', (req, res) => {
+//   console.log('SERVER request BODY: ', req.body)
+// })
 
 require('../database/routes.js')(app);
 

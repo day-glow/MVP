@@ -41,20 +41,15 @@ For Users
 */
 //create new user
 exports.create = (req, res) => {
-  // if (!req.body.userName) {
-  //   res.status(400).send({message: "Content cannot be empty!"})
-  //   return;
-  // }
-  //console.log('REQUEST: ', req);
-  //console.log('BODY: ', req.body);
+  if (!req.body.userName) {
+    res.status(400).send({message: "Content cannot be empty!"})
+    return;
+  }
 
   const newUser = {
-    // first_name: req.body.firstName,
-    // last_name: req.body.lastName,
-    // user_name: req.body.userName,
-    first_name: 'John',
-    last_name: 'Jacobs',
-    user_name: 'Bacon_n_Eggs'
+    first_name: req.body.firstName,
+    last_name: req.body.lastName,
+    user_name: req.body.userName,
   };
 
   User.create(newUser)
