@@ -9,19 +9,38 @@ function QuoteContainer({ nextQuote, getNextQuote}) {
 
   return (
     <div>
-
-      <div className="container-quote">Quote Loading, Please Wait...</div>
-      <br />
-      <div className="quote-box">
-        <div className="quote-details">
-          <div>{nextQuote.body}</div>
-          <h3>By: {nextQuote.author}</h3>
+      <div className="container-quote align-center">
+        <div className="quote-box align-center">
+          <div className="quote-details">
+            <div className="row">
+              <div className="s12 m5">
+                <div className="card-panel teal align-center">
+                  <span className="white-text">
+                    {`\" ${nextQuote.body} \"`}
+                    <br />
+                    <span className="align-right">{`-${nextQuote.author}`}</span>
+                    <br />
+                  </span>
+                </div>
+                <div>
+                  <button type='button' className='btn-floating btn-large waves-effect waves-light next-btn align-center' id='quote-btn' onClick={() => getNextQuote()}>>></button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div>
-        <button type='button' className='next-btn' id='quote-btn' onClick={() => getNextQuote()}>NEXT QUOTE</button>
-      </div>
-
+      {/* <div>
+          <ul class="pagination">
+            <li class="disabled"><a href="#!"><i class="material-icons"></i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons"></i></a></li>
+          </ul>
+      </div> */}
     </div>
   )
 }

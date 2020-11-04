@@ -49,7 +49,9 @@ CREATE TABLE content(
   JSON_body text(5000) not null,
   source int not null,
   category int not null,
-  total_likes int not null
+  total_likes int not null,
+  createdAt datetime null,
+  updatedAt datetime null
 );
 
 CREATE TABLE users(

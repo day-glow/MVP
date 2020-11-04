@@ -14,11 +14,29 @@ App Header
 ===============================
 */
 
-h1 {
-  font-size: 50px;
+/* .header {
+  display: block;
+  justify-content: space-between;
+  position: fixed;
+  padding: 10px;
+  border-bottom: 1px solid #cacccdcb;
+  margin-bottom: 50px;
+} */
+
+.brand-logo {
+  margin-left: 20px;
+}
+.container-new-user {
+  display: block;
+  float: right;
+  width: 200px;
+
 }
 
-.header {
+.logged-in-user {
+  width: 250px !important;
+}
+/* .header {
   display: block;
   justify-content: space-between;
   border-bottom: 1px solid #cacccdcb;
@@ -31,6 +49,35 @@ h1 {
   top: 10%;
   bottom: 70%;
   float: left;
+} */
+
+/*
+===============================
+Intro
+===============================
+*/
+
+h1 {
+  display: block;
+  justify-content: space-between;
+  font-size: 50px;
+}
+
+.intro {
+  justify-content: center space-between;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.title, #start-btn {
+  font-family: 'Julius Sans One', sans-serif;
+  justify-content: center space-between;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
 }
 
 /*
@@ -48,22 +95,36 @@ Category Containers
 
 .container {
   display: block;
-
-  width: 800px;
-  height: 600px;
+  justify-content: center;
+  align-items: center;
+  width: 1000px auto;
+  height: 900px;
   border-width: 2;
   border-radius: 10px;
   filter: blur();
   border-color: solid 1pt black;
   box-shadow: 3px 2px 25px 5px #cacccdcb;
   opacity: 1;
-  padding: 2px;
-  margin: 20px;
+  padding: 20px;
+  margin: 30px auto;
+
 }
 
 .category-quote {
   background-color: #68c39f;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
 }
+.quote-box {
+  margin-top: 150px;
+  margin: 100px;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
 
 .category-song {
   background-color: rgba(217, 164, 230, 0.853);
@@ -73,6 +134,24 @@ Category Containers
 }
 .category-social {
   background-color: #0683be;
+}
+
+.align-right {
+  float: right;
+}
+
+.container-song-player {
+  margin: 50px;
+}
+
+.next-song-btn {
+  float: left;
+  margin-top: 300px;
+  margin-left: 150px;
+}
+
+.song-player {
+  float: right;
 }
 
 /*
@@ -120,6 +199,113 @@ Footer
 ===============================
 */
 
-.footer {
-  background-color: #043d5d;
+.container-footer {
+  margin-left: 10px;
+}
+
+.footer-copyright {
+  margin-left: 20px;
+}
+
+/*
+===============================
+Tweet
+===============================
+*/
+
+blockquote.twitter-tweet {
+  display: inline-block;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  border-color: #eee #ddd #bbb;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin: 10px 5px;
+  padding: 0 16px 16px 16px;
+  max-width: 468px;
+}
+
+blockquote.twitter-tweet p {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+blockquote.twitter-tweet a {
+  color: inherit;
+  font-weight: normal;
+  text-decoration: none;
+  outline: 0 none;
+}
+
+blockquote.twitter-tweet a:hover,
+blockquote.twitter-tweet a:focus {
+  text-decoration: underline;
+}
+
+.TweetAuthor-name {
+  color:#2a83e7;
+}
+.EmbeddedTweet {
+  background-color:#f3f9f8 !important;
+  border-color:#e3f5f9 !important;
+  height:auto !important;
+}
+.Tweet-header {
+  color: white;
+}
+.EmbeddedTweet:hover .TweetAuthor-name {
+  color:#2054d4;
+}
+.Tweet-text {
+  padding:10px;
+  border-radius:5px;
+  border:1px solid #ddd;
+  background-color:#eee;
+}
+
+
+div.twitter-tweet-rendered p.entry-title {
+  font-family: Arial, sans-serif !important;
+  font-size: 14px !important;
+  padding: 5px !important;
+  background: #eee !important;
+  max-width: 300px !important;
+}
+
+div.twitter-tweet-rendered p.entry-title a.link {
+  font-family: Arial, sans-serif !important;
+  font-size: 14px !important;
+}
+
+div.twitter-tweet-rendered div.twt-border {
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+div.twitter-tweet-rendered iframe.twt-follow-button { display: none !important; }
+
+div.twitter-tweet-rendered div.footer ul.twt-actions {display: none !important;}
+
+div.twitter-tweet-rendered div.footer a.view-details {
+  display:block !important;
+  width: 120px !important;
+  margin: 5px 0 !important;
+  padding: 7px 0 !important;
+  background: #000 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  border-radius: 13px !important;
+  text-align: center !important;
+  box-shadow: -1px -1px 2px #555 !important;
+}
+
+div.twitter-tweet-rendered div.footer a.view-details span {
+  font: 14px Georgia, serif !important;
+  color: #fff !important;
 }

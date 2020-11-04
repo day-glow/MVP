@@ -51,8 +51,15 @@ app.get('/api/quotes', (req, res) => {
   })
     .then((result) => {
       //console.log(result.data);
+      axios.post('/api/content', {
+        'text_body': result.data.quotes[0].body,
+        'JSON_body': result.data.quotes[0],
+        'source': '1',
+        'category': '1'
+      })
       res.status(200).send(result.data);
     })
+
     .catch((err) => console.log(err));
 })
 
@@ -104,7 +111,7 @@ app.get('/api/tweets', (req, res) => {
     }
   })
     .then((result) => {
-      console.log(result);
+      //console.log(result);
       res.status(200).send(result.data);
     })
     .catch((err) => console.log(err));

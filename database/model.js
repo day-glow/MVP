@@ -25,7 +25,31 @@ const User = sequelize.define('User', {
   tableName: 'users',
 });
 
-module.exports = { User };
+const Content = sequelize.define('Content', {
+  // Model attributes are defined here
+  text_body: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  JSON_body: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  source: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  category: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  }
+}, {
+  // Other model options go here
+  sequelize,
+  tableName: 'content',
+});
+
+module.exports = { User, Content };
 
 // `sequelize.define` also returns the model
 //console.log(User === sequelize.models.User); // true

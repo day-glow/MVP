@@ -4,41 +4,10 @@ const { User } = require('./model.js')
 
 /*
 ===============================
-For Content
-===============================
-*/
-
-//add new content record (POST)
-exports.create = (req, res) => {
-
-};
-
-//retrieve all records based on a filter (i.e. category or source)
-exports.findAll = (req, res) => {
-
-};
-
-//retrieve one record based on a filter (i.e. API is down and need to fetch content)
-exports.findOne = (req, res) => {
-
-};
-
-//update total_likes count for content_id & add user_like record
-exports.update = (req, res) => {
-
-};
-
-//low priority, delete a record if uri is broken
-exports.delete = (req, res) => {
-
-};
-
-
-/*
-===============================
 For Users
 ===============================
 */
+
 //create new user
 exports.create = (req, res) => {
   if (!req.body.userName) {
@@ -58,7 +27,7 @@ exports.create = (req, res) => {
       res.send(data);
     })
     .catch(err => {
-      console.log('ERROR', err)
+      //console.log('ERROR', err)
       res.status(500).send(err)
     });
 };
