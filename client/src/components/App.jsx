@@ -11,6 +11,7 @@ import exampleSongData from '/Users/jacki/Downloads/git_tutorial/work/MVP/databa
 import exampleVideoData from '/Users/jacki/Downloads/git_tutorial/work/MVP/database/exampleVideoData.js';
 import exampleTweetData from '/Users/jacki/Downloads/git_tutorial/work/MVP/database/exampleTweetData.js';
 import Header from './Header.jsx';
+
 import QuoteContainer from './QuoteContainer.jsx';
 import SongPlayerContainer from './SongPlayerContainer.jsx';
 import VideoPlayerContainer from './VideoPlayerContainer.jsx';
@@ -22,6 +23,10 @@ function App() {
   const [nextSong, setNextSong] = useState(exampleSongData.items[0].track);
   const [nextVideo, setNextVideo] = useState(exampleVideoData[1]);
   const [nextTweet, setNextTweet] = useState(exampleTweetData);
+
+  const [firstName, setFirst] = useState('');
+  const [lastName, setLast] = useState('');
+  const [userName, setUserName] = useState('');
 
   const data = sampleData[1]['title'] || 'data not imported correctly';
 

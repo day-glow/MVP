@@ -1,7 +1,8 @@
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
-var SpotifyWebApi = require('spotify-web-api-node');
+const db = require('../database/model.js')
+// var SpotifyWebApi = require('spotify-web-api-node');
 
 const { FAVQS_API_KEY } = require('../client/src/config/favQs_api_key.js');
 const { SPOTIFY_CLIENT_ID, SPOTIFY_SECRET_KEY, SPOTIFY_OAUTH_TOKEN } = require('../client/src/config/spotify_api_key.js');
@@ -12,11 +13,28 @@ const app = express();
 const PORT = 3000;
 const PUBLIC_DIR = path.resolve(__dirname, '../public');
 
+
 app.use(express.static(PUBLIC_DIR));
 
-app.get('/', (req, res) => {
-  res.send('Hello World! From server/index.js')
-})
+//app.use('/user')
+
+//create new user
+// app.post(
+//   db.sequelize.sync({force:true})
+//     .then(() => {
+//       console.log("resync db")
+//       db.create({
+//         id,
+//         first_name: ,
+//         last_name: ,
+//         user_name:
+//       })
+// }))
+
+
+// app.get('/', (req, res) => {
+//   res.send('Hello World! From server/index.js')
+// })
 
 //GET Quote
 app.get('/api/quotes', (req, res) => {
@@ -86,7 +104,7 @@ app.get('/api/tweets', (req, res) => {
     .catch((err) => console.log(err));
 })
 
-//"https://api.twitter.com/2/tweets/440322224407314432?expansions=author_id,attachments.media_keys"
+require('../database/routes.js')(app);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
