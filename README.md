@@ -10,7 +10,7 @@ Motivation App for your daily inspiration to get at it.  Enjoy quotes, songs, vi
 Note: Motivation HUB currently in development.
 
 ## Getting Started
-Clone the Githu repository:
+Clone the Github repository:
 * `$ git clone https://github.com/day-glow/MVP.git`
 
 Navigate inside of the directory `./MVP` and run the following commands:
