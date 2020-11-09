@@ -1,2 +1,1 @@
 # MVP
-Motivation App
