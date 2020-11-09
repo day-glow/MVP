@@ -1,21 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Header() {
 
   return (
     <div>
-
-      <div className="container-header">Home etc</div>
-      <br />
-      <div className="header-box">
-        <div className="header-details">
-          <button type='button' className='next-btn' id='home-btn' onClick={() => console.log('HOME')}>home</button>
+      <nav className="nav-extended">
+        <div className="nav-wrapper">
+          <a href="#" className="brand-logo">Motivation HUB</a>
+          <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons"></i></a>
+          <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#my-likes-page">My Likes</a></li>
+            <li><a href="#my-profile-page">My Profile</a></li>
+          </ul>
         </div>
-      </div>
-      <div>
-        <a href="https://twitter.com/intent/tweet?button_hashtag=Motivation&ref_src=twsrc%5Etfw" className="twitter-hashtag-button" data-show-count="false">Tweet #Motivation</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
-      </div>
-
+        <div className="nav-content">
+          <ul className="tabs tabs-transparent">
+            <li className="tab"><a href="#quotes">Quote</a></li>
+            <li className="tab"><a className="active" href="#songs">Song</a></li>
+            <li className="tab disabled"><a href="#videos">Video</a></li>
+            <li className="tab"><a href="#social">Social</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
   )
 }

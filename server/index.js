@@ -1,7 +1,9 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 const axios = require('axios');
-var SpotifyWebApi = require('spotify-web-api-node');
+const db = require('../database/model.js')
+// var SpotifyWebApi = require('spotify-web-api-node');
 
 const { FAVQS_API_KEY } = require('../client/src/config/favQs_api_key.js');
 const { SPOTIFY_CLIENT_ID, SPOTIFY_SECRET_KEY, SPOTIFY_OAUTH_TOKEN } = require('../client/src/config/spotify_api_key.js');
@@ -12,11 +14,33 @@ const app = express();
 const PORT = 3000;
 const PUBLIC_DIR = path.resolve(__dirname, '../public');
 
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static(PUBLIC_DIR));
 
-app.get('/', (req, res) => {
-  res.send('Hello World! From server/index.js')
-})
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  next();
+});
+//app.use('/user')
+
+//create new user
+// app.post(
+//   db.sequelize.sync({force:true})
+//     .then(() => {
+//       console.log("resync db")
+//       db.create({
+//         id,
+//         first_name: ,
+//         last_name: ,
+//         user_name:
+//       })
+// }))
+
+
+// app.get('/', (req, res) => {
+//   res.send('Hello World! From server/index.js')
+// })
 
 //GET Quote
 app.get('/api/quotes', (req, res) => {
@@ -27,8 +51,15 @@ app.get('/api/quotes', (req, res) => {
   })
     .then((result) => {
       //console.log(result.data);
+      axios.post('/api/content', {
+        'text_body': result.data.quotes[0].body,
+        'JSON_body': result.data.quotes[0],
+        'source': '1',
+        'category': '1'
+      })
       res.status(200).send(result.data);
     })
+
     .catch((err) => console.log(err));
 })
 
@@ -55,7 +86,7 @@ app.get('/song', (req, res) => {
 
 //GET Youtube Video
 app.get('/video', (req, res) => {
-  axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&type=video&part=snippet&maxResults=1&q=motivation`)
+  axios.get(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&type=video&part=snippet&maxResults=10&q=motivation`)
   .then((result) => {
     //console.log(result.data);
     res.status(200).send(result.data);
@@ -80,13 +111,17 @@ app.get('/api/tweets', (req, res) => {
     }
   })
     .then((result) => {
-      console.log(result);
+      //console.log(result);
       res.status(200).send(result.data);
     })
     .catch((err) => console.log(err));
 })
 
-//"https://api.twitter.com/2/tweets/440322224407314432?expansions=author_id,attachments.media_keys"
+// app.post('/api/user', (req, res) => {
+//   console.log('SERVER request BODY: ', req.body)
+// })
+
+require('../database/routes.js')(app);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
