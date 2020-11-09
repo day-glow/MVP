@@ -1,5 +1,6 @@
 // Your FavQs API keys go here!
 // Sign up for your API key: https://favqs.com/api_keys
+
 module.exports = {
   FAVQS_API_KEY: 'INSERT API KEY HERE'
 }
