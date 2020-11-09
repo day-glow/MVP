@@ -11,15 +11,15 @@ Note: Motivation HUB currently in development.
 
 ## Getting Started
 Clone the Githu repository:
-`$ git clone https://github.com/day-glow/MVP.git`
+* `$ git clone https://github.com/day-glow/MVP.git`
 
 Navigate inside of the directory `./MVP` and run the following commands:
-`$ npm install`
-`$ npm run build`
-`$ npm start`
+1. `$ npm install`
+2. `$ npm run build`
+3. `$ npm start`
 
 Open a new browser tab to see the app:
-`http://localhost:3000`
+* `http://localhost:3000`
 
 Note: Current videos are samples. Must add new API keys/tokens for all media sources to populate with new data. Please review "Add API's" section of this ReadMe.
 
@@ -38,8 +38,8 @@ The current repo has 4 API's it is pulling from in the server. You must add your
 - [ ] Twitter API v2: ( https://developer.twitter.com/en/docs/twitter-api )
 
 Once completed refresh the page. If there is no change, `Ctrl + C` in terminal windows and rerun the following commands:
-`$ npm run build`
-`$ npm start`
+1. `$ npm run build`
+2. `$ npm start`
 
 ## Using Motivation HUB
 Each section is dedicated to quotes, songs, videos or social feeds. Users can like a content piece and save them to their likes to revisit at a later time.
