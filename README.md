@@ -29,7 +29,7 @@ Wouldn't a sweet song like "We Will Rock You" pump you up?
 ## Documentation
 1. [Project Summary](#MVP)
 1. [Getting Started](#Getting-Started)
-1. [API's](#API's)
+1. [API's](#APIs)
 1. [Usage](#Using-Motivation-HUB)
 1. [Design](#Whiteboarding-Database)
 1. [Technologies](#Technologies)
@@ -49,7 +49,7 @@ Open a new browser tab to see the app:
 
 Note: Current videos are samples. Must add new API keys/tokens for all media sources to populate with new data. Please review "Add API's" section of this ReadMe.
 
-## API's
+## APIs
 * FavQ's.com
 * Spotify
 * Youtube
