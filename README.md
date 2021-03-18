@@ -83,7 +83,7 @@ Click on the content to link to the original content source.
 * Express
 * mySQL
 * Sequelize
-* Wepack
+* Webpack
 * Materialize CSS
 
 ## Related Projects
