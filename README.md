@@ -22,6 +22,15 @@ Note: Motivation HUB currently in development. Here is a sneak peek to what is t
 
 ![](./img/mHUB_song.png)
 
+## Documentation
+1. [Project Summary](#MVP)
+1. [Getting Started](#Getting-Started)
+1. [API's](#API's)
+1. [Usage](#Using-Motivation-HUB)
+1. [Design](#Whiteboarding-Database)
+1. [Technologies](#Technologies)
+1. [Related Projects](#Related-Projects)
+
 ## Getting Started
 Clone the Github repository:
 * `$ git clone https://github.com/day-glow/MVP.git`
@@ -64,7 +73,7 @@ Click on the content to link to the original content source.
 ## Whiteboarding Database
 ![](./img/mHUB_whiteboarding.jpg)
 
-## Built With
+## Technologies
 * React
 * Node.js
 * Express
@@ -72,3 +81,6 @@ Click on the content to link to the original content source.
 * Sequelize
 * Wepack
 * Materialize CSS
+
+## Related Projects
+* Checkout my projects: https://github.com/day-glow
