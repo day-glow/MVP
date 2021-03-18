@@ -7,7 +7,11 @@ I love coding, spreading positivity and hearing feedback! Feel free to connect, 
 Motivation HUB
 Motivation App for your daily inspiration to get at it.  Enjoy quotes, songs, video clips and social posts :)
 
-Note: Motivation HUB currently in development.
+Note: Motivation HUB currently in development. Here is a sneak peek to what is to come:
+![](./img/mHUB_1.png)
+![](./img/mHUB_2.png)
+
+![](./img/mHUB_song.png)
 
 ## Getting Started
 Clone the Github repository:
