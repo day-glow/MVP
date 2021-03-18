@@ -52,6 +52,9 @@ Click the right arrow button to see next piece of content.
 
 Click on the content to link to the original content source.
 
+## Whiteboarding Database
+![](./img/mHUB_whiteboarding.jpg)
+
 ## Built With
 * React
 * Node.js
