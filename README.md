@@ -1,7 +1,16 @@
-# Hi, I'm Jacki
-
+# Built by Jacki
 <img align='right' src='https://media.giphy.com/media/bcKmIWkUMCjVm/giphy.gif' width='200"'>
-I love coding, spreading positivity and hearing feedback! Feel free to connect, send feedback or submit a PR with really cool ideas :)
+
+I love coding, spreading positivity and hearing feedback! Let's connect.
+
+<!-- LinkedIn  -->
+<a href="https://www.linkedin.com/in/jacki-yanamura/" target="_blank">
+  <img src="https://img.shields.io/badge/-Jacki%20Yanamura-blue?style=for-the-badge&logo=Linkedin&logoColor=white"/>
+</a>
+<!--   Email -->
+<a href="mailto:jacki.yanamura@gmail.com">
+  <img src="https://img.shields.io/badge/EMAIL-jacki.yanamura%40gmail.com-1152ba?style=for-the-badge"/>
+</a>
 
 # MVP
 Motivation HUB
