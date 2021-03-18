@@ -13,8 +13,10 @@ I love coding, spreading positivity and hearing feedback! Let's connect.
 </a>
 
 # MVP
-Motivation HUB
-Motivation App for your daily inspiration to get at it.  Enjoy quotes, songs, video clips and social posts :)
+Open source motivational app providing on-demand media via popular  APIs.
+* Designed intuitive and user friendly front-end utilizing Materialize CSS
+* Integrated 4 popular APIs for dynamic media from Spotify, Youtube, Twitter, and FavQ’s.
+* Implemented “favorites” content feature storing records in mySQL database to increase user activity, social sharing and returned visits
 
 Note: Motivation HUB currently in development. Here is a sneak peek to what is to come:
 ![](./img/mHUB_1.png)
