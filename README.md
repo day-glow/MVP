@@ -83,4 +83,8 @@ Click on the content to link to the original content source.
 * Materialize CSS
 
 ## Related Projects
-* Checkout my projects: https://github.com/day-glow
+* Checkout projects by [Day-Glow](https://github.com/day-glow):
+  - [Souperhost:3000 travel booking site calendar](https://github.com/souperhost-3000/service-day-glow)
+  - [Retail eCommerce backend migration](https://github.com/The-10-000-RPS-Club/service-jacki)
+  - [nnext: random number mobile app](https://github.com/day-glow/nnext)
+  - [LeetCode Solutions by Day-Glow](https://github.com/day-glow/Leet-Code)
