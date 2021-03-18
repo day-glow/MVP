@@ -19,9 +19,11 @@ Open source motivational app providing on-demand media via popular  APIs.
 * Implemented “favorites” content feature storing records in mySQL database to increase user activity, social sharing and returned visits
 
 Note: Motivation HUB currently in development. Here is a sneak peek to what is to come:
+
 ![](./img/mHUB_1.png)
 ![](./img/mHUB_2.png)
 
+Wouldn't a sweet song like "We Will Rock You" pump you up?
 ![](./img/mHUB_song.png)
 
 ## Documentation
