@@ -20,9 +20,10 @@ I love coding, spreading positivity and hearing feedback! Let's connect.
 
 # MVP
 Open source motivational app providing on-demand media via popular  APIs.
-* Designed intuitive and user friendly front-end utilizing Materialize CSS
-* Integrated 4 popular APIs for dynamic media from Spotify, Youtube, Twitter, and FavQ’s.
-* Implemented “favorites” content feature storing records in mySQL database to increase user activity, social sharing and returned visits
+* Architected, scoped and led development of a single page web application (SPA)
+* Led design of intuitive and user friendly frontend utilizing Materialize CSS
+* Integrated 4 popular APIs to retrieve dynamic media from Spotify, YouTube, Twitter, and FavQ’s
+* Implemented “favorites” service backed by mySQL enabling users to save personalized lists resulting in increased user activity, social sharing and returned visits
 
 Note: Motivation HUB currently in development. Here is a sneak peek to what is to come:
 
